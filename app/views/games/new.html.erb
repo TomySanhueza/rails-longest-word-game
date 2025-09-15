@@ -1,0 +1,9 @@
+<h1>New game</h1>
+<p> <%= @letters.join(" ") %></p>
+<p>What is the longest word you can make with these letters?</p>
+<form action="/score" method="post" data-turbo="false">
+  <input type="text" name="word" placeholder="Your word">
+  <input type="hidden" name="letters" value="<%= @letters.join(" ") %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Play!">
+</form>
